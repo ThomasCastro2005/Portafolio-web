@@ -1,30 +1,21 @@
 import React from "react";
-import { useTranslation } from "react-i18next";
 
 const Header = () => {
-  const [t, i18n] = useTranslation("global");
   return (
-    <div>
-      <h1>{t("header.hello-world")}</h1>
-      <p>{t("header.description")}</p>
-
-      <br />
-      <br />
-      <div className="grid grid-cols-2 gap-10">
-        <button
-          className="border-2 rounded-[5px] cursor-pointer"
-          onClick={() => i18n.changeLanguage("en")}
-        >
-          EN
-        </button>
-        <button
-          className="border-2 rounded-[5px] cursor-pointer"
-          onClick={() => i18n.changeLanguage("es")}
-        >
-          ES
-        </button>
-      </div>
-    </div>
+    <>
+      <header className="sticky top-0 z-50 w-full flex justify-around items-center lg:py-4 lg:pt-10">
+          <span className="font-clash font-semibold text-white">Portafolio</span>
+          <nav className="flex justify-center items-center g:px-4 lg:py-4 border-b border-white/0 bg-white/10 backdrop-blur-md rounded-full lg:w-[30%]">  
+            <ul className="flex gap-4">
+              <li className="font-clash font-normal text-white">Inicio</li>
+              <li className="font-clash font-normal text-white">About me</li>
+              <li className="font-clash font-normal text-white">Projects</li>
+              <li className="font-clash font-normal text-white">Contact me</li>
+            </ul>
+          </nav>
+          <span className="font-clash font-semibold text-white">Perfil</span>
+      </header>
+    </>
   );
 };
 

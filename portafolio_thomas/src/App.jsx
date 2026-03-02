@@ -1,15 +1,12 @@
 import './App.css'
-import Header from './components/Header'
-import SectionForm from './components/SectionForm'
+import PrincipalPage from './pages/PrincipalPage';
 
 function App() {
 
   return (
     <>
       <div>
-      <Header/>
-      <SectionForm/>
-
+      <PrincipalPage/>
       </div>
     </>
   )
