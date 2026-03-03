@@ -1,4 +1,4 @@
-@import 'tailwindcss';
+@import "tailwindcss";
 @import "tw-animate-css";
 @import "shadcn/tailwind.css";
 
@@ -7,12 +7,14 @@
 @theme {
   --font-clash: "ClashDisplay", sans-serif;
   --font-synonym: "Synonym", sans-serif;
+  --font-syro: "Syro", sans-serif;
 }
 
 /* ClashDisplay */
 @font-face {
   font-family: "ClashDisplay";
-  src: url("./assets/fonts/clashDisplay/ClashDisplay-Extralight.woff") format("woff");
+  src: url("./assets/fonts/clashDisplay/ClashDisplay-Extralight.woff")
+    format("woff");
   font-weight: 200;
   font-display: swap;
   font-style: normal;
@@ -26,21 +28,24 @@
 }
 @font-face {
   font-family: "ClashDisplay";
-  src: url("./assets/fonts/clashDisplay/ClashDisplay-Regular.woff") format("woff");
+  src: url("./assets/fonts/clashDisplay/ClashDisplay-Regular.woff")
+    format("woff");
   font-weight: 400;
   font-display: swap;
   font-style: normal;
 }
 @font-face {
   font-family: "ClashDisplay";
-  src: url("./assets/fonts/clashDisplay/ClashDisplay-Medium.woff") format("woff");
+  src: url("./assets/fonts/clashDisplay/ClashDisplay-Medium.woff")
+    format("woff");
   font-weight: 500;
   font-display: swap;
   font-style: normal;
 }
 @font-face {
   font-family: "ClashDisplay";
-  src: url("./assets/fonts/clashDisplay/ClashDisplay-Semibold.woff") format("woff");
+  src: url("./assets/fonts/clashDisplay/ClashDisplay-Semibold.woff")
+    format("woff");
   font-weight: 600;
   font-display: swap;
   font-style: normal;
@@ -96,6 +101,98 @@
   font-display: swap;
   font-style: normal;
 }
+
+@font-face {
+  font-family: 'Syro';
+  src: url('./assets/fonts/syro/Styro-Extralight.woff2') format('woff2'),
+       url('./assets/fonts/syro/Styro-Extralight.woff') format('woff'),
+       url('./assets/fonts/syro/Styro-Extralight.ttf') format('truetype');
+  font-weight: 200;
+  font-display: swap;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Syro';
+  src: url('./assets/fonts/syro/Styro-Light.woff2') format('woff2'),
+       url('./assets/fonts/syro/Styro-Light.woff') format('woff'),
+       url('./assets/fonts/syro/Styro-Light.ttf') format('truetype');
+  font-weight: 300;
+  font-display: swap;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Syro';
+  src: url('./assets/fonts/syro/Styro-Regular.woff2') format('woff2'),
+       url('./assets/fonts/syro/Styro-Regular.woff') format('woff'),
+       url('./assets/fonts/syro/Styro-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-display: swap;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Syro';
+  src: url('./assets/fonts/syro/Styro-Medium.woff2') format('woff2'),
+       url('./assets/fonts/syro/Styro-Medium.woff') format('woff'),
+       url('./assets/fonts/syro/Styro-Medium.ttf') format('truetype');
+  font-weight: 500;
+  font-display: swap;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Syro';
+  src: url('./assets/fonts/syro/Styro-Semibold.woff2') format('woff2'),
+       url('./assets/fonts/syro/Styro-Semibold.woff') format('woff'),
+       url('./assets/fonts/syro/Styro-Semibold.ttf') format('truetype');
+  font-weight: 600;
+  font-display: swap;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Syro';
+  src: url('./assets/fonts/syro/Styro-Bold.woff2') format('woff2'),
+       url('./assets/fonts/syro/Styro-Bold.woff') format('woff'),
+       url('./assets/fonts/syro/Styro-Bold.ttf') format('truetype');
+  font-weight: 700;
+  font-display: swap;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Syro';
+  src: url('./assets/fonts/syro/Styro-Extrabold.woff2') format('woff2'),
+       url('./assets/fonts/syro/Styro-Extrabold.woff') format('woff'),
+       url('./assets/fonts/syro/Styro-Extrabold.ttf') format('truetype');
+  font-weight: 800;
+  font-display: swap;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Syro';
+  src: url('./assets/fonts/syro/Styro-Black.woff2') format('woff2'),
+       url('./assets/fonts/syro/Styro-Black.woff') format('woff'),
+       url('./assets/fonts/syro/Styro-Black.ttf') format('truetype');
+  font-weight: 900;
+  font-display: swap;
+  font-style: normal;
+}
+/**
+* This is a variable font
+* You can control variable axes as shown below:
+* font-variation-settings: wght 900.0;
+*
+* available axes:
+'wght' (range from 200.0 to 900.0
+*/
+@font-face {
+  font-family: 'Syro';
+  src: url('./assets/fonts/syro/Styro-Variable.woff2') format('woff2'),
+       url('./assets/fonts/syro/Styro-Variable.woff') format('woff'),
+       url('./assets/fonts/syro/Styro-Variable.ttf') format('truetype');
+  font-weight: 200 900;
+  font-display: swap;
+  font-style: normal;
+}
+
+
 
 @theme inline {
   --radius-sm: calc(var(--radius) - 4px);
@@ -214,4 +311,24 @@
   body {
     @apply bg-background text-foreground;
   }
+}
+
+@keyframes marquee {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+.animate-marquee {
+  display: flex;
+  width: max-content;
+  animation: marquee 20s linear infinite;
+}
+
+.marquee-container {
+  overflow: hidden;
+  mask-image: linear-gradient(to right, transparent 0%, black 12%, black 88%, transparent 100%);
+  -webkit-mask-image: linear-gradient(to right, transparent 0%, black 12%, black 88%, transparent 100%);
 }

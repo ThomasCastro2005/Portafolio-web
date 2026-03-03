@@ -61,15 +61,15 @@ const AboutMe = () => {
 
       <section className="flex justify-center w-full h-[7%] py-40">
         <div className="w-[80%] flex">
-          <div className="flex lg:flex-row items-center gap-20">
-            <div className="lg:w-[50%] flex lg:flex-col justify-around gap-5">
-              <h1 className="font-clash font-bold text-amber-50 text-[50px]">
+          <div className="flex flex-col lg:flex-row items-center gap-20">
+            <div className="lg:w-[50%] flex flex-col lg:flex-col justify-around gap-5">
+              <h1 className="font-clash font-bold text-amber-50 text-[35px] lg:text-[50px] text-center lg:text-start">
                 ¿Quien es{" "}
                 <span className="font-clash text-purple-600">
                   Thomas Castro ?
                 </span>
               </h1>
-              <div className="flex lg:flex-row lg:w-[90%]">
+              <div className="flex lg:flex-row w-[35%] lg:w-[90%]">
                 <img
                   className="lg:w-[35%]"
                   src="https://framerusercontent.com/images/mHIHt1IfNwNdWZEzuLWbbAsYAQ.png?scale-down-to=512&width=1024&height=1024"
