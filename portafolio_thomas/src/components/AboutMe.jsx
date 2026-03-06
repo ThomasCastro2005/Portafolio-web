@@ -1,5 +1,7 @@
 import React from "react";
 import TechnoLoop from "./TechnoLoop";
+import { motion } from "motion/react";
+
 
 const AboutMe = () => {
   return (
@@ -63,12 +65,18 @@ const AboutMe = () => {
         <div className="w-[80%] flex">
           <div className="flex flex-col lg:flex-row items-center gap-20">
             <div className="lg:w-[50%] flex flex-col lg:flex-col justify-around gap-5">
-              <h1 className="font-clash font-bold text-amber-50 text-[35px] lg:text-[50px] text-center lg:text-start">
+              <motion.h1
+              whileInView={{
+              x: [-500, 0],
+              opacity: [0, 1],
+              transition: { duration: 1 },
+            }}
+               className="font-clash font-bold text-amber-50 text-[35px] lg:text-[50px] text-center lg:text-start">
                 ¿Quien es{" "}
                 <span className="font-clash text-purple-600">
                   Thomas Castro ?
                 </span>
-              </h1>
+              </motion.h1>
               <div className="flex lg:flex-row w-[35%] lg:w-[90%]">
                 <img
                   className="lg:w-[35%]"
@@ -84,7 +92,13 @@ const AboutMe = () => {
                 ></img>
               </div>
             </div>
-            <div className="font-clash lg:w-[50%] text-amber-50">
+            <motion.div 
+            whileInView={{
+              x: [500, 0],
+              opacity: [0, 1],
+              transition: { duration: 1 },
+            }}
+            className="font-clash lg:w-[50%] text-amber-50">
               Lorem Ipsum es simplemente el texto de relleno de las imprentas y
               archivos de texto. Lorem Ipsum ha sido el texto de relleno
               estándar de las industrias desde el año 1500, cuando un impresor
@@ -97,7 +111,7 @@ const AboutMe = () => {
               las cuales contenian pasajes de Lorem Ipsum, y más recientemente
               con software de autoedición, como por ejemplo Aldus PageMaker, el
               cual incluye versiones de Lorem Ipsum.
-            </div>
+            </motion.div>
           </div>
         </div>
       </section>

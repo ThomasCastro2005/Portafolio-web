@@ -1,4 +1,5 @@
 import React from "react";
+import { motion } from "motion/react";
 
 const ContactMe = () => {
   return (
@@ -10,20 +11,27 @@ const ContactMe = () => {
 
         <div className="relative z-10 w-full lg:h-75 flex justify-around items-center">
           <div className="border border-white/50 rounded-full p-10 w-60 h-60 flex flex-col items-center justify-center">
-            <h2 className="font-semibold">WhatssApp</h2>
+            <motion.h2
+            whileInView={{
+              x: [-100, 0],
+              opacity: [0, 1],
+              transition: { duration: 0.75 },
+            }}
+             className="font-semibold">WhatssApp</motion.h2>
             <p>+57 3004803696</p>
           </div>
           <div className="border border-white/50 rounded-full p-10 w-60 h-60 flex flex-col items-center justify-center">
-            <h2 className="font-semibold">Instagram</h2>
+            <motion.h2 className="font-semibold">Instagram</motion.h2>
             <p>+57 3004803696</p>
           </div>
           <div className="border border-white/50 rounded-full p-10 w-60 h-60 flex flex-col items-center justify-center">
-            <h2 className="font-semibold">Linkdnl</h2>
+            <motion.h2 className="font-semibold">LinkedIn</motion.h2>
             <p>+57 3004803696</p>
           </div>
         </div>
       </div>
     </>
+    
   );
 };
 
