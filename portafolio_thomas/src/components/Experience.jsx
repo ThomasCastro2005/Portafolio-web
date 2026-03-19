@@ -1,5 +1,6 @@
 import React from "react";
 import CardExperience from "./CardExperience";
+import { motion } from "motion/react";
 
 const Experience = () => {
   
@@ -27,15 +28,27 @@ const Experience = () => {
 
   return (
     <>
-      <h1 className="font-clash font-bold text-amber-50 text-center text-[40px] lg:text-5xl py-10">
+      <motion.h1
+       whileInView={{
+                x: [500, 0],
+                transition: { duration: 1.75 },
+                opacity: [0, 1],
+              }}
+       className="font-clash font-bold text-amber-50 text-center text-[40px] lg:text-5xl py-10">
         Experiencia
-      </h1>
-      <div className="relative rounded-2xl w-full p-10 overflow-hidden">
+      </motion.h1>
+      <motion.div
+      whileInView={{
+        y: [500, 0],
+        transition: {duration: 1},
+        opacity: [0,1],
+      }}
+       className="relative rounded-2xl w-full p-10 overflow-hidden">
         <div className="absolute inset-0 bg-white/5 backdrop-blur-xl border border-white/8 rounded-2xl z-0" />
         <div className="relative z-10 flex flex-col gap-10">
           <CardExperience dataExperience={dataExperience}/>
         </div>
-      </div>
+      </motion.div>
     </>
   );
 };

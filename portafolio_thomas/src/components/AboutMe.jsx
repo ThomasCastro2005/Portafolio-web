@@ -1,9 +1,17 @@
 import React from "react";
 import TechnoLoop from "./TechnoLoop";
-import { motion } from "motion/react";
+import { motion, useScroll, useTransform } from "motion/react";
+import { useRef } from "react";
 
 
 const AboutMe = () => {
+
+  const targetRef = useRef(null);
+  const {scrollYProgress} = useScroll ({
+    target: targetRef,
+    offset: ["start end", "start 0.3"]
+  });
+  const x = useTransform(scrollYProgress, [0, 1], ["-150%", "0%"])
   return (
     <>
       <TechnoLoop
@@ -61,16 +69,12 @@ const AboutMe = () => {
         pauseOnHover
       />
 
-      <section className="flex justify-center w-full h-[7%] py-40">
+      <section ref={targetRef} className="flex justify-center w-full h-[7%] py-40 overflow-hidden">
         <div className="w-[80%] flex">
           <div className="flex flex-col lg:flex-row items-center gap-20">
             <div className="lg:w-[50%] flex flex-col lg:flex-col justify-around gap-5">
               <motion.h1
-              whileInView={{
-              x: [-200, 0],
-              opacity: [0, 1],
-              transition: { duration: 2 },
-            }}
+              style={{x}}
                className="font-clash font-bold text-amber-50 text-[35px] lg:text-[50px] text-center lg:text-start">
                 ¿Quien es{" "}
                 <span className="font-clash text-purple-600">

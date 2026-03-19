@@ -46,7 +46,7 @@ const PrincipalPage = () => {
             <Projects />
           </div>
         </div>
-        <div className="flex justify-center pt-10 w-full">
+        <div className="flex justify-center pt-10 w-full overflow-hidden">
           <div className="w-[80%]">
             <Experience/>
           </div>

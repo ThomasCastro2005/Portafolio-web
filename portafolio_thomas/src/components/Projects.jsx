@@ -23,22 +23,25 @@ const projects = [
 ];
 
 const Projects = () => {
-  const targetRef = useRef<HTMLDivElement | null>(null);
+  const targetRef = useRef(null);
   const {scrollYProgress} = useScroll ({
-    target: targetRef
+    target: targetRef,
+    offset: ["start end", "start 0.2"]
   });
-  const x = useTransform(scrollYProgress, [0,1], ["-100%", "85%"])
-  
+  const xLeft = useTransform(scrollYProgress, [0, 1], ["-150%", "0%"])
+  const xRight = useTransform(scrollYProgress, [0, 1], ["60%", "0%"])
+
   return (
     <>
-      <div className="pt-0 lg:pt-10 flex flex-col lg:flex-row justify-between gap-15 lg:gap-6">
+      <div ref={targetRef} className="pt-0 lg:pt-10 flex flex-col lg:flex-row justify-between gap-15 lg:gap-6">
         <div className="flex flex-col lg:w-[50%] gap-10 px-10">
           <motion.h1
-          style={{x}}
+          style={{x: xLeft}}
           className="font-clash font-extrabold text-amber-50 text-[40px] lg:text-5xl text-start">
             <span>Mis</span> <span className="text-purple-600">Proyectos</span>
           </motion.h1>
-          <motion.div style={{x}} className="font-clash text-amber-50">
+          <motion.div
+           style={{x: xRight}} className="font-clash text-amber-50">
             Lorem Ipsum es simplemente el texto de relleno de las imprentas y
             archivos de texto. Lorem Ipsum ha sido el texto de relleno estándar
             de las industrias desde el año 1500, cuando un impresor (N. del T.
@@ -53,7 +56,7 @@ const Projects = () => {
             Ipsum.
           </motion.div>
         </div>
-        <motion.div style={{y}} className="flex flex-col gap-7 w-full">
+        <motion.div className="flex flex-col gap-7 w-full">
           {projects.map((p) => (
             <CardProjects key={p.title} {...p} />
           ))}
