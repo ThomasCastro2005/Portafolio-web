@@ -1,8 +1,16 @@
 import React from "react";
+import { useRef } from "react";
+import {motion, useScroll, useTransform} from 'motion/react'
 
 const CardProjects = ({ img, title = "Project", tags = [], link = "#" }) => {
+  const ref = useRef<HTMLDivElement | null>(null)
+  const {scrollYProgress} = useScroll({
+    target: ref
+  })
+
+  const y = useTransform(scrollYProgress, [0,1], ["-100%", "85%"])
   return (
-    <div className="group relative w-full rounded-2xl bg-[#0d0d14] border border-white/8 overflow-hidden hover:shadow-xl hover:shadow-purple-500/50 transition duration-400">
+    <motion.div style={{y}} className="group relative w-full rounded-2xl bg-[#0d0d14] border border-white/8 overflow-hidden hover:shadow-xl hover:shadow-purple-500/50 transition duration-400">
 
       {/* Browser top bar */}
       <div className="flex items-center gap-1.5 px-4 py-3 border-b border-white/5 bg-[#111118]">
@@ -45,7 +53,7 @@ const CardProjects = ({ img, title = "Project", tags = [], link = "#" }) => {
           Visit →
         </a>
       </div>
-    </div>
+    </motion.div>
   );
 };
 

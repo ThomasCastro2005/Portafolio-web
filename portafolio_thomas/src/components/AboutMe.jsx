@@ -55,7 +55,7 @@ const AboutMe = () => {
             alt: "Python",
           },
         ]}
-        speed={80}
+        speed={40}
         gap={48}
         logoHeight={40}
         pauseOnHover
@@ -67,9 +67,9 @@ const AboutMe = () => {
             <div className="lg:w-[50%] flex flex-col lg:flex-col justify-around gap-5">
               <motion.h1
               whileInView={{
-              x: [-500, 0],
+              x: [-200, 0],
               opacity: [0, 1],
-              transition: { duration: 1 },
+              transition: { duration: 2 },
             }}
                className="font-clash font-bold text-amber-50 text-[35px] lg:text-[50px] text-center lg:text-start">
                 ¿Quien es{" "}

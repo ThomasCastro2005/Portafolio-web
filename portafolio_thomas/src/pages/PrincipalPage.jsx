@@ -9,6 +9,7 @@ import Projects from "@/components/Projects";
 import Experience from "@/components/Experience";
 import CallToAction from "@/components/CallToAction";
 import ContactMe from "@/components/ContactMe";
+import { motion } from "motion/react"
 
 const PrincipalPage = () => {
   return (
@@ -25,9 +26,17 @@ const PrincipalPage = () => {
         <AboutMe />
         <div className="flex justify-center w-full lg:h-400">
           <div className="w-[80%]">
-            <h2 className="font-clash font-bold text-amber-50 text-[40px] text-center">
+            <motion.h2
+            whileInView={{
+              x:[200, 0],
+              transition: { 
+                duration: 1.75,
+                opacity: [0,100]
+               }
+            }}
+            className="font-clash font-bold text-amber-50 text-[40px] text-center">
               Mis Estudios
-            </h2>
+            </motion.h2>
             <TimeLineEducation />
           </div>
         </div>

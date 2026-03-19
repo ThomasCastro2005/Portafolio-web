@@ -98,6 +98,7 @@ const useAnimationLoop = (trackRef, targetVelocity, seqWidth, seqHeight, isHover
       track.style.transform = isVertical ? 'translate3d(0, 0, 0)' : 'translate3d(0, 0, 0)';
       return () => {
         lastTimestampRef.current = null;
+        this.lastName
       };
     }
 
@@ -142,7 +143,7 @@ const useAnimationLoop = (trackRef, targetVelocity, seqWidth, seqHeight, isHover
 
 export const TechnoLoop = memo(({
   logos,
-  speed = 120,
+  speed = 10,
   direction = 'left',
   width = '100%',
   logoHeight = 28,
