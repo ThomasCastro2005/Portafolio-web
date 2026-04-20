@@ -9,14 +9,14 @@ const Header = () => {
 
   return (
     <>
-      <header className="sticky top-0 z-50 w-full flex justify-between p-10 lg:grid md:grid-cols-3 lg:grid-cols-3 md:items-center md:place-items-center lg:items-center lg:place-items-center lg:py-4 lg:pt-10 font-clash text-amber-50">
-        <span className="font-clash font-semibold text-[20px]">Portafolio</span>
+      <header className="sticky top-0 z-50 w-full flex justify-between p-10 lg:grid md:grid-cols-3 lg:grid-cols-3 md:items-center md:place-items-center lg:items-center lg:place-items-center lg:py-4 lg:pt-10 font-bebas text-amber-50">
+        <span className="font-bebas font-semibold text-[20px]">THOMAS CASTRO</span>
 
         {/* Nav pill — md/lg únicamente */}
-        <nav className="hidden md:flex sticky top-10 justify-center w-full md:w-[50%] lg:w-full items-center px-4 md:py-4 lg:py-4 border-b border-white/0 bg-white/10 backdrop-blur-md rounded-full">
+        <nav className="hidden md:flex sticky top-10 justify-center w-full md:w-[50%] lg:w-full items-center px-4 md:py-3 lg:py-3 border-b border-white/0 bg-white/10 backdrop-blur-md rounded-full">
           <ul className="flex justify-around w-100 gap-4">
             {navLinks.map((link) => (
-              <li key={link} className="font-normal cursor-pointer">{link}</li>
+              <li key={link} className="cursor-pointer font-hind font-light">{link}</li>
             ))}
           </ul>
         </nav>
@@ -46,7 +46,7 @@ const Header = () => {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.25 }}
-            className="md:hidden fixed inset-0 z-100 bg-black/95 backdrop-blur-xl flex flex-col items-center justify-center font-clash text-amber-50"
+            className="md:hidden fixed inset-0 z-100 bg-black/95 backdrop-blur-xl flex flex-col items-center justify-center font-bebas text-amber-50"
           >
             {/* Botón cerrar */}
             <Motion.button

@@ -4,12 +4,10 @@ import PrincipalBg from "@/components/PrincipalBg";
 import React from "react";
 import AboutMe from "@/components/AboutMe";
 import TimeLineEducation from "@/components/TimeLineEducation";
-import ScrollText from "@/components/ScrollText";
 import Projects from "@/components/Projects";
 import Experience from "@/components/Experience";
-import CallToAction from "@/components/CallToAction";
 import ContactMe from "@/components/ContactMe";
-import { motion } from "motion/react"
+import { motion } from "motion/react";
 
 const PrincipalPage = () => {
   return (
@@ -23,47 +21,39 @@ const PrincipalPage = () => {
         <PrincipalSection />
       </div>
       <div className="">
-        <AboutMe />
+        <div className="flex flex-col">
+          <AboutMe />
+        </div>
         <div className="flex justify-center w-full lg:h-400">
           <div className="w-[80%]">
             <motion.h2
-            whileInView={{
-              x:[200, 0],
-              transition: { 
-                duration: 1.75,
-                opacity: [0,100]
-               }
-            }}
-            className="font-clash font-bold text-amber-50 text-[40px] text-center">
+              initial={{ y: -50, opacity: 0 }}
+              whileInView={{ y: 0, opacity: 1 }}
+              transition={{ duration: 1.5 }}
+              viewport={{ once: true }}
+              className="font-bebas font-bold text-amber-50 text-[40px] text-center"
+            >
               Mis Estudios
             </motion.h2>
             <TimeLineEducation />
           </div>
         </div>
-        <ScrollText />
         <div className="flex justify-center w-full">
           <div className="w-[80%]">
             <Projects />
           </div>
         </div>
-        <div className="flex justify-center pt-10 w-full overflow-hidden">
+        <div className="flex justify-center w-full overflow-hidden">
           <div className="w-[80%]">
-            <Experience/>
+            <Experience />
           </div>
         </div>
 
-        <div className="flex justify-center pt-10 w-full">
-          <div className="w-[80%]">
-            <CallToAction/>
-          </div>
+        <div className="py-35 w-full flex justify-center">
+            <div className="w-[80%]">
+              <ContactMe />
+            </div>
         </div>
-
-        <div className="flex justify-center pt-10 w-full">
-          <div className="w-[80%]">
-            <ContactMe/>
-          </div>
-        </div>
-
       </div>
     </>
   );

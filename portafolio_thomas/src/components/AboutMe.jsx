@@ -1,17 +1,12 @@
 import React from "react";
 import TechnoLoop from "./TechnoLoop";
-import { motion, useScroll, useTransform } from "motion/react";
 import { useRef } from "react";
+import { motion } from 'motion/react';
 
 
 const AboutMe = () => {
 
   const targetRef = useRef(null);
-  const {scrollYProgress} = useScroll ({
-    target: targetRef,
-    offset: ["start end", "start 0.3"]
-  });
-  const x = useTransform(scrollYProgress, [0, 1], ["-150%", "0%"])
   return (
     <>
       <TechnoLoop
@@ -33,14 +28,6 @@ const AboutMe = () => {
           {
             src: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/typescript/typescript-original.svg",
             alt: "TypeScript",
-          },
-          {
-            src: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/html5/html5-original.svg",
-            alt: "HTML5",
-          },
-          {
-            src: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/css3/css3-original.svg",
-            alt: "CSS3",
           },
           {
             src: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nodejs/nodejs-original.svg",
@@ -74,10 +61,17 @@ const AboutMe = () => {
           <div className="flex flex-col lg:flex-row items-center gap-20">
             <div className="lg:w-[50%] flex flex-col lg:flex-col justify-around gap-5">
               <motion.h1
-              style={{x}}
-               className="font-clash font-bold text-amber-50 text-[35px] lg:text-[50px] text-center lg:text-start">
+              initial={{x:-150}}
+              whileInView={{x:0}}
+              transition={{
+                duration:1.5,
+                type:"tween",
+                ease:"easeInOut"
+                }}
+                viewport={{once:true}}
+               className="font-bebas font-bold text-amber-50 text-[35px] lg:text-[50px] text-center lg:text-center">
                 ¿Quien es{" "}
-                <span className="font-clash text-purple-600">
+                <span className="font-bebas text-purple-600">
                   Thomas Castro ?
                 </span>
               </motion.h1>
@@ -100,9 +94,10 @@ const AboutMe = () => {
             whileInView={{
               x: [500, 0],
               opacity: [0, 1],
-              transition: { duration: 1 },
+              transition: { duration: 1.5 },
             }}
-            className="font-clash lg:w-[50%] text-amber-50">
+            viewport={{once:true}}
+            className="font-hind lg:w-[50%] text-amber-50">
               Lorem Ipsum es simplemente el texto de relleno de las imprentas y
               archivos de texto. Lorem Ipsum ha sido el texto de relleno
               estándar de las industrias desde el año 1500, cuando un impresor

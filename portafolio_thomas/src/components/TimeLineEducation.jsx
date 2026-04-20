@@ -4,18 +4,11 @@ import { AnimatePresence, motion } from "motion/react";
 const TimeLineEducation = () => {
   return (
     <>
-      <section className="mx-auto pt-15 font-clash">
+      <section className="mx-auto pt-15 font-hind">
         <div>
           {/* Step 1 */}
           <div className="flex lg:flex-row">
-            <motion.div
-              whileInView={{
-                y: [50, 0],
-                transition: { duration: 1.75 },
-                opacity: [0, 1],
-              }}
-              className="hidden md:flex flex-col items-center"
-            >
+            <div className="hidden md:flex flex-col items-center">
               <div className="w-32 py-5 border border-gray-300 rounded mr-4 uppercase flex flex-col items-center justify-center">
                 <div className="text-3xl font-black text-amber-50">4</div>
                 <div className="text-amber-50 text-sm">Profesional</div>
@@ -23,18 +16,17 @@ const TimeLineEducation = () => {
               <div className="h-full border-l-4 border-transparent">
                 <div className="border-l-4 mr-4 h-full border-gray-300 border-dashed"></div>
               </div>
-            </motion.div>
+            </div>
             <motion.div
-              whileInView={{
-                x: [100, 0],
-                transition: { duration: 1.35 },
-                opacity: [0, 1],
-              }}
+              initial={{ y: 50, opacity: 0 }}
+              whileInView={{ y: 0, opacity: 1 }}
+              transition={{ duration: 1.5 }}
+              viewport={{ once: true }}
               className="flex-auto border rounded border-gray-300 md:h-56 lg:h-64 lg:items-center"
             >
               <div className="flex md:flex-row flex-col items-stretch h-full gap-10">
                 <div className="flex-auto flex flex-col md:flex-col lg:flex-col md:justify-center lg:justify-center">
-                  <div className="px-3 py-1 text-xl md:text-[20px] lg:text-[20px] text-amber-50 font-bold">
+                  <div className="px-3 py-1 font-bebas text-xl md:text-[20px] lg:text-[20px] text-amber-50 font-bold">
                     Ingenieria de Software
                   </div>
                   <div className="px-3 pb-1 text-sm md:text-base text-amber-50 font-normal">
@@ -71,14 +63,7 @@ const TimeLineEducation = () => {
 
           {/* Step 2 */}
           <div className="flex flex-row-reverse">
-            <motion.div
-              whileInView={{
-                y: [50, 0],
-                transition: { duration: 1.75 },
-                opacity: [0, 1],
-              }}
-              className="hidden md:flex flex-col items-center"
-            >
+            <div className="hidden md:flex flex-col items-center">
               <div className="w-32 py-5 border border-gray-300 rounded ml-4 uppercase flex flex-col items-center justify-center">
                 <div className="text-3xl font-black text-amber-50">3</div>
                 <div className="text-amber-50 text-sm">Técnologo</div>
@@ -86,18 +71,17 @@ const TimeLineEducation = () => {
               <div className="h-full border-r-4 border-transparent">
                 <div className="border-l-4 ml-4 h-full border-gray-300 border-dashed"></div>
               </div>
-            </motion.div>
+            </div>
             <motion.div
-              whileInView={{
-                x: [-100, 0],
-                transition: { duration: 1.35 },
-                opacity: [0, 1],
-              }}
+              initial={{ y: 50, opacity: 0 }}
+              whileInView={{ y: 0, opacity: 1 }}
+              transition={{ duration: 1.5 }}
+              viewport={{ once: true }}
               className="flex-auto border rounded border-gray-300 md:h-56 lg:h-64"
             >
               <div className="flex md:flex-row flex-col items-stretch h-full gap-10">
                 <div className="flex-auto flex flex-col md:flex-col lg:flex-col md:justify-center lg:justify-center">
-                  <div className="p-3 text-xl md:text-[20px] lg:text-[20px] text-amber-50 font-bold">
+                  <div className="p-3 font-bebas text-xl md:text-[20px] lg:text-[20px] text-amber-50 font-bold">
                     Técnologo en análisis y desarrollo de software
                   </div>
                   <div className="px-3 py-1 text-sm md:text-base text-amber-50 font-normal">
@@ -134,14 +118,7 @@ const TimeLineEducation = () => {
 
           {/* Step 3 */}
           <div className="flex flex-row">
-            <motion.div
-              whileInView={{
-                y: [50, 0],
-                transition: { duration: 1.75 },
-                opacity: [0, 1],
-              }}
-              className="hidden md:flex flex-col items-center"
-            >
+            <div className="hidden md:flex flex-col items-center">
               <div className="w-32 py-5 border border-gray-300 rounded mr-4 uppercase flex flex-col items-center justify-center">
                 <div className="text-3xl font-black text-amber-50">2</div>
                 <div className="text-amber-50 text-sm">Técnico</div>
@@ -149,18 +126,17 @@ const TimeLineEducation = () => {
               <div className="h-full border-l-4 border-transparent">
                 <div className="border-l-4 mr-4 h-full border-gray-300 border-dashed"></div>
               </div>
-            </motion.div>
+            </div>
             <motion.div
-              whileInView={{
-                x: [100, 0],
-                transition: { duration: 1.35 },
-                opacity: [0, 1],
-              }}
+              initial={{ y: 50, opacity: 0 }}
+              whileInView={{ y: 0, opacity: 1 }}
+              transition={{ duration: 1.5 }}
+              viewport={{ once: true }}
               className="flex-auto border rounded border-gray-300 md:h-56 lg:h-64"
             >
               <div className="flex md:flex-row flex-col items-stretch h-full gap-10">
                 <div className="flex-auto flex flex-col md:flex-col lg:flex-col md:justify-center lg:justify-center">
-                  <div className="p-3 text-xl md:text-[20px] lg:text-[20px] text-amber-50 font-bold">
+                  <div className="p-3 font-bebas text-xl md:text-[20px] lg:text-[20px] text-amber-50 font-bold">
                     Técnico en programación
                   </div>
                   <div className="px-3 py-1 text-sm md:text-base text-amber-50 font-normal">
@@ -197,28 +173,22 @@ const TimeLineEducation = () => {
 
           {/* Step 4 */}
           <div className="flex flex-row-reverse">
-            <motion.div 
-            whileInView={{
-                y: [50, 0],
-                transition: { duration: 1.75 },
-                opacity: [0, 1],
-              }}
-            className="hidden md:flex flex-col items-center">
+            <div className="hidden md:flex flex-col items-center">
               <div className="w-32 py-5 border border-gray-300 rounded ml-4 uppercase flex flex-col items-center justify-center">
                 <div className="text-3xl font-black text-amber-50">1</div>
                 <div className="text-amber-50 text-sm">Bachiller</div>
               </div>
-            </motion.div>
-            <motion.div 
-            whileInView={{
-                x: [-100, 0],
-                transition: { duration: 1.35 },
-                opacity: [0, 1],
-              }}
-            className="flex-auto border rounded border-gray-300 md:h-56 lg:h-64">
+            </div>
+            <motion.div
+              initial={{ y:50, opacity:0 }}
+              whileInView={{ y:0, opacity: 1 }}
+              transition={{ duration:1.5 }}
+              viewport={{ once: true }}
+              className="flex-auto border rounded border-gray-300 md:h-56 lg:h-64"
+            >
               <div className="flex md:flex-row flex-col items-stretch h-full md:gap-10 gap-10">
                 <div className="flex-auto flex flex-col md:flex-col lg:flex-col md:justify-center lg:justify-center">
-                  <div className="p-3 text-xl md:text-[20px] lg:text-[20px] text-amber-50 font-bold">
+                  <div className="p-3 font-bebas text-xl md:text-[20px] lg:text-[20px] text-amber-50 font-bold">
                     Bachiller
                   </div>
                   <div className="px-3 py-1 text-sm md:text-base text-amber-50 font-normal">

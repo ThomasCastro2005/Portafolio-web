@@ -1,37 +1,44 @@
 import React from "react";
 import { motion } from "motion/react";
+import { Button } from "./ui/button";
 
 const ContactMe = () => {
   return (
     <>
-      <div className="relative border border-white/20 rounded-2xl overflow-hidden text-amber-50 font-clash">
-        <div className="absolute -top-12 left-1/4 w-64 h-64 bg-purple-600/60 rounded-full blur-3xl" />
-        <div className="absolute -bottom-12 right-1/4 w-64 h-64 bg-amber-600/60 rounded-full blur-3xl" />
-        <div className="absolute inset-0 bg-white/5 backdrop-blur-2xl" />
-
-        <div className="relative z-10 w-full lg:h-75 flex justify-around items-center">
-          <div className="border border-white/50 rounded-full p-10 w-60 h-60 flex flex-col items-center justify-center">
-            <motion.h2
-            whileInView={{
-              x: [-100, 0],
-              opacity: [0, 1],
-              transition: { duration: 0.75 },
-            }}
-             className="font-semibold">WhatssApp</motion.h2>
-            <p>+57 3004803696</p>
-          </div>
-          <div className="border border-white/50 rounded-full p-10 w-60 h-60 flex flex-col items-center justify-center">
-            <motion.h2 className="font-semibold">Instagram</motion.h2>
-            <p>+57 3004803696</p>
-          </div>
-          <div className="border border-white/50 rounded-full p-10 w-60 h-60 flex flex-col items-center justify-center">
-            <motion.h2 className="font-semibold">LinkedIn</motion.h2>
-            <p>+57 3004803696</p>
-          </div>
+      <div className="flex justify-between items-center gap-10">
+        <div className="flex flex-col w-[70%]">
+          <motion.span
+            initial={{ x: 100, opacity: 0 }}
+            whileInView={{ x: 0, opacity: 1 }}
+            transition={{ duration: 1.25 }}
+            viewport={{ once: true }}
+            className="font-bebas font-bold text-5xl lg:text-6xl text-amber-50 tracking-wide"
+          >
+            ¿Te gustaria que hiciera{" "}
+          </motion.span>
+          <motion.span
+            initial={{ x: 50, opacity: 0 }}
+            whileInView={{ x: 0, opacity: 1 }}
+            transition={{ duration: 1.25 }}
+            viewport={{ once: true }}
+            className="font-bebas font-bold text-3xl lg:text-5xl text-purple-600 tracking-wide"
+          >
+            parte de tu equipo?
+          </motion.span>
         </div>
+
+        <motion.div
+          initial={{ x: 100, opacity: 0 }}
+          whileInView={{ x: 0, opacity: 1 }}
+          transition={{ duration: 1.45 }}
+          viewport={{ once: true }}
+        >
+          <Button variant="glass" className={"cursor-pointer"} size="lg">
+            <a className="tracking-wide">Hablemos →</a>
+          </Button>
+        </motion.div>
       </div>
     </>
-    
   );
 };
 

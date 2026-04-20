@@ -3,52 +3,47 @@ import CardExperience from "./CardExperience";
 import { motion } from "motion/react";
 
 const Experience = () => {
-  
   const dataExperience = [
     {
-    title: "WINDMAR HOME",
-    position: "Desarrollador Junior",
-    date: "Actual",
-    description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam facilis, voluptates error alias dolorem praesentium sit soluta iure incidunt labore explicabo eaque, quia architecto veritatis dolores, enim consequatur nihil ipsum.",
-  },{
-    title: "RAMA JUDICIAL",
-    position: "Contratista",
-    date: "30/12/2023 - 31/06/2024",
-    description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam facilis, voluptates error alias dolorem praesentium sit soluta iure incidunt labore explicabo eaque, quia architecto veritatis dolores, enim consequatur nihil ipsum.",
-  },{
-    title: "BANCO POPULAR",
-    position: "Aprendiz Desarrollador Junior",
-    date: "30/12/2023 - 31/06/2024",
-    description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam facilis, voluptates error alias dolorem praesentium sit soluta iure incidunt labore explicabo eaque, quia architecto veritatis dolores, enim consequatur nihil ipsum.",
-  }
+      title: "WINDMAR HOME",
+      position: "Desarrollador Junior",
+      date: "Actual",
+      description:
+        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam facilis, voluptates error alias dolorem praesentium sit soluta iure incidunt labore explicabo eaque, quia architecto veritatis dolores, enim consequatur nihil ipsum.",
+    },
+    {
+      title: "RAMA JUDICIAL",
+      position: "Contratista",
+      date: "30/12/2023 - 31/06/2024",
+      description:
+        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam facilis, voluptates error alias dolorem praesentium sit soluta iure incidunt labore explicabo eaque, quia architecto veritatis dolores, enim consequatur nihil ipsum.",
+    },
+    {
+      title: "BANCO POPULAR",
+      position: "Aprendiz Desarrollador Junior",
+      date: "30/12/2023 - 31/06/2024",
+      description:
+        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam facilis, voluptates error alias dolorem praesentium sit soluta iure incidunt labore explicabo eaque, quia architecto veritatis dolores, enim consequatur nihil ipsum.",
+    },
   ];
 
   return (
     <>
       <motion.h1
-       whileInView={{
-                x: [500, 0],
-                transition: { duration: 1.75 },
-                opacity: [0, 1],
-              }}
-       className="font-clash font-bold text-amber-50 text-center text-[40px] lg:text-5xl py-10">
+        initial={{ y: 50, opacity: 0 }}
+        whileInView={{ y: 0, opacity: 1 }}
+        transition={{ duration: 1.65 }}
+        viewport={{ once: true }}
+        className="font-bebas font-bold text-amber-50 text-center text-[40px] lg:text-5xl py-20"
+      >
         Experiencia
       </motion.h1>
-      <motion.div
-      whileInView={{
-        y: [500, 0],
-        transition: {duration: 1},
-        opacity: [0,1],
-      }}
-       className="relative rounded-2xl w-full p-10 overflow-hidden">
+      <div className="relative rounded-2xl w-full p-10 overflow-hidden">
         <div className="absolute inset-0 bg-white/5 backdrop-blur-xl border border-white/8 rounded-2xl z-0" />
         <div className="relative z-10 flex flex-col gap-10">
-          <CardExperience dataExperience={dataExperience}/>
+          <CardExperience dataExperience={dataExperience} />
         </div>
-      </motion.div>
+      </div>
     </>
   );
 };
