@@ -2,8 +2,10 @@ import React from "react";
 import TechnoLoop from "./TechnoLoop";
 import { easeIn, motion } from "motion/react";
 import { Button } from "./ui/button";
+import { useTranslation } from "react-i18next";
 
 const PrincipalSection = () => {
+  const [t, i18n] = useTranslation("global");
   return (
     <div className="min-h-screen w-full relative flex flex-col items-center justify-center overflow-hidden">
       <div
@@ -20,59 +22,70 @@ const PrincipalSection = () => {
             <div className="w-[100%] lg:w-[60%]">
               <h1 className="text-white font-bebas font-bold text-[40px] md:text-[55px] lg:text-[90px] text-center lg:text-center flex flex-col justify-center">
                 <motion.span
-                  whileInView={{
-                    x: [100, 0],
-                    transition: { duration: 1.25 },
-                  }}
+                  initial={{ y:-50, opacity:0 }}
+                  whileInView={{ y:0, opacity:1 }}
+                  transition={{ duration:1.3 }}
                   viewport={{ once: true }}
                   className="select-none tracking-normal bg-gradient-to-b from-purple-400 to-purple-700 bg-clip-text text-transparent"
                 >
-                  DESARROLLADOR DE SOFTWARE
+                  {t("principal-section.title")}
                 </motion.span>
               </h1>
               <motion.p
                 whileInView={{
-                  y: [100, 0],
-                  transition: { duration: 1.25 },
+                  y: [20, 0],
+                  transition: { duration: 1.3 },
                 }}
                 viewport={{ once: true }}
                 className="select-none text-muted-foreground text-[16px] md:text-[20px] lg:text-1xl font-hind font-normal text-center"
               >
-                Diseño y desarrollo{" "}
+                {t("principal-section.description")}{" "}
                 <span className="text-amber-50">
-                  experiencias digitales end-to-end
+                  {t("principal-section.span-dsc")}
                 </span>
-                . Con intención, con calma, con código limpio.
+                {t("principal-section.description2")}
               </motion.p>
             </div>
           </div>
           <div className="w-full flex justify-center pt-10">
-            <motion.div
-              initial={{ x: 100, opacity: 0 }}
-              whileInView={{ x: 0, opacity: 1 }}
-              transition={{ duration: 1.45 }}
-              viewport={{ once: true }}
-              className="flex flex-col gap-3 lg:flex-row lg:gap-10"
-            >
-              <Button
-                variant="principalSection1"
-                className={"cursor-pointer"}
-                size="lg2"
+            <div className="flex flex-col items-center gap-3 lg:flex-row lg:gap-10">
+              <motion.div
+                initial={{ x: -50, opacity: 0 }}
+                whileInView={{ x: 0, opacity: 1 }}
+                transition={{ duration: 1.25 }}
+                viewport={{ once: true }}
               >
-                <a className="tracking-widest">Hablemos →</a>
-              </Button>
-              <Button
-                variant="principalSection2"
-                className={"cursor-pointer"}
-                size="lg3"
+                <Button
+                  variant="principalSection1"
+                  className={"cursor-pointer"}
+                  size="lg2"
+                >
+                  <a className="tracking-widest">
+                    {t("principal-section.button1")} →
+                  </a>
+                </Button>
+              </motion.div>
+              <motion.div
+                initial={{ x: 50, opacity: 0 }}
+                whileInView={{ x: 0, opacity: 1 }}
+                transition={{ duration: 1.3 }}
+                viewport={{ once: true }}
               >
-                <i
-                  class="fa-solid fa-code-branch"
-                  style={{ color: "rgb(255, 255, 255)" }}
-                ></i>
-                <a className="tracking-widest">GitHub</a>
-              </Button>
-            </motion.div>
+                <Button
+                  variant="principalSection2"
+                  className={"cursor-pointer"}
+                  size="lg3"
+                >
+                  <i
+                    class="fa-solid fa-code-branch"
+                    style={{ color: "rgb(255, 255, 255)" }}
+                  ></i>
+                  <a className="tracking-widest">
+                    {t("principal-section.button2")}
+                  </a>
+                </Button>
+              </motion.div>
+            </div>
           </div>
         </div>
       </section>

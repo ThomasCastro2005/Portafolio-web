@@ -33,7 +33,7 @@ const ContactMe = () => {
           transition={{ duration: 1.45 }}
           viewport={{ once: true }}
         >
-          <Button variant="glass" className={"cursor-pointer"} size="lg">
+          <Button variant="principalSection2" className={"cursor-pointer"} size="lg">
             <a className="tracking-wide">Hablemos →</a>
           </Button>
         </motion.div>

@@ -1,10 +1,20 @@
 {
   "header": {
     "hello-world": "Hello world",
-    "description": "A sleek and modern design that combines functionality with aesthetic appeal. Its compact size makes it perfect for daily use without sacrificing performance."
+    "description": "A sleek and modern design that combines functionality with aesthetic appeal. Its compact size makes it perfect for daily use without sacrificing performance.",
+    "nav-links": {
+      "nav1": "Home",
+      "nav2": "About me",
+      "nav3": "Projects",
+      "nav4": "Contact me"
+    }
   },
-  "section-form": {
-    "title": "Junior Full-Stack Developer",
-    "description": "Welcome to my portfolio! Here, everyone can explore the best of my web development work."
+  "principal-section": {
+    "title": "Software Developer",
+    "description": "I design and develop",
+    "span-dsc": "end-to-end digital experiences",
+    "description2": ". With intention, with care, with clean code.",
+    "button1": "Let's talk",
+    "button2": "GitHub"
   }
 }

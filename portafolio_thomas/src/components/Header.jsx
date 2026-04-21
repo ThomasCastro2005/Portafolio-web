@@ -1,10 +1,13 @@
 import React, { useState } from "react";
 import { Menu, X } from "lucide-react";
 import { motion as Motion, AnimatePresence } from "motion/react";
+import { useTranslation } from "react-i18next";
 
-const navLinks = ["Inicio", "About me", "Projects", "Contact me"];
+
 
 const Header = () => {
+  const [ t, i18n ] = useTranslation("global");
+  const navLinks = [t("header.nav-links.nav1"), t("header.nav-links.nav2"), t("header.nav-links.nav3"), t("header.nav-links.nav4")];
   const [open, setOpen] = useState(false);
 
   return (
@@ -20,10 +23,13 @@ const Header = () => {
           </ul>
         </nav>
 
-        <select className="font-semibold text-[95%] hidden md:block tracking-wider cursor-pointer hover:text-muted-foreground transition duration-200">
-          <option>Language</option>
-          <option>ES</option>
-          <option>EN</option>
+        <select
+          className="font-semibold text-[95%] hidden md:block tracking-wider cursor-pointer hover:text-muted-foreground transition duration-200"
+          onChange={(e) => i18n.changeLanguage(e.target.value)}
+          defaultValue={i18n.language}
+        >
+          <option value="es">ES</option>
+          <option value="en">EN</option>
         </select>
 
         <Motion.button
@@ -74,10 +80,11 @@ const Header = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.42 }}
               className="mt-12 font-semibold bg-transparent text-amber-50 border border-amber-50/30 rounded-full px-6 py-2 cursor-pointer"
+              onChange={(e) => i18n.changeLanguage(e.target.value)}
+              defaultValue={i18n.language}
             >
-              <option className="bg-black">Language</option>
-              <option className="bg-black">ES</option>
-              <option className="bg-black">EN</option>
+              <option value="es" className="bg-black">ES</option>
+              <option value="en" className="bg-black">EN</option>
             </Motion.select>
           </Motion.div>
         )}

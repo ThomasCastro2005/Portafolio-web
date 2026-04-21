@@ -1,11 +1,9 @@
 import React from "react";
 import TechnoLoop from "./TechnoLoop";
 import { useRef } from "react";
-import { motion } from 'motion/react';
-
+import { motion } from "motion/react";
 
 const AboutMe = () => {
-
   const targetRef = useRef(null);
   return (
     <>
@@ -56,61 +54,59 @@ const AboutMe = () => {
         pauseOnHover
       />
 
-      <section ref={targetRef} className="flex justify-center w-full h-[7%] pt-40 pb-20 overflow-hidden">
+      <section
+        ref={targetRef}
+        className="p-10 flex justify-center w-full h-[7%] pb-20 pt-60 lg:pt-60 lg:pb-30 overflow-hidden"
+      >
         <div className="w-[80%] flex">
-          <div className="flex flex-col lg:flex-row items-center gap-10 md:gap-20 lg:gap-20">
-            <div className="lg:w-[50%] flex flex-col lg:flex-col justify-around gap-5">
+          <div className="w-full flex flex-col lg:flex-row items-center gap-10 md:gap-20 lg:gap-20">
+
+            <div className=" flex flex-col lg:flex-col justify-around items-center gap-5">
+              <div className="flex justify-center lg:flex-row w-[70%] lg:w-[90%]">
+                <img
+                  className=" lg:w-[85%] rounded-full"
+                  src="https://media.licdn.com/dms/image/v2/D4E03AQER0gfeM6BEhQ/profile-displayphoto-crop_800_800/B4EZlJPtYdIUAI-/0/1757870480528?e=1778112000&v=beta&t=CiprLeMnp_3b6SRKXxdGAx9FaZhSutbdlrmWUexHaDQ"
+                ></img>
+              </div>
+            </div>
+
+            <div className="flex gap-10 flex-col lg:flex-col items-center w-full">
               <motion.h1
-              initial={{x:-150}}
-              whileInView={{x:0}}
-              transition={{
-                duration:1.5,
-                type:"tween",
-                ease:"easeInOut"
+                initial={{ y: -50, opacity:0 }}
+                whileInView={{ y: 0, opacity:1 }}
+                transition={{
+                  duration: 1.3,
+                  type: "tween",
+                  ease: "easeInOut",
                 }}
-                viewport={{once:true}}
-               className="font-bebas font-bold text-amber-50 text-[35px] lg:text-[50px] text-center lg:text-center">
-                ¿Quien es{" "}
+                viewport={{ once: true }}
+                className="font-bebas font-bold text-amber-50 text-[35px] lg:text-[50px] text-center lg:text-center"
+              >
+                ¿ Quien es{" "}
                 <span className="font-bebas text-purple-600">
                   Thomas Castro ?
                 </span>
               </motion.h1>
-              <div className="flex lg:flex-row w-[35%] lg:w-[90%]">
-                <img
-                  className="lg:w-[35%]"
-                  src="https://framerusercontent.com/images/mHIHt1IfNwNdWZEzuLWbbAsYAQ.png?scale-down-to=512&width=1024&height=1024"
-                ></img>
-                <img
-                  className="lg:w-[35%]"
-                  src="https://framerusercontent.com/images/mHIHt1IfNwNdWZEzuLWbbAsYAQ.png?scale-down-to=512&width=1024&height=1024"
-                ></img>
-                <img
-                  className="lg:w-[35%]"
-                  src="https://framerusercontent.com/images/mHIHt1IfNwNdWZEzuLWbbAsYAQ.png?scale-down-to=512&width=1024&height=1024"
-                ></img>
-              </div>
+              <motion.p
+                initial={{ y: 50, opacity:0 }}
+                whileInView={{ y: 0, opacity:1 }}
+                transition={{
+                  duration: 1.3,
+                  type: "tween",
+                  ease: "easeInOut",
+                }}
+                viewport={{ once: true }}
+                className="h-full flex justify-center items-center font-hind lg:w-[80%] text-amber-50"
+              >
+                Lorem Ipsum es simplemente el texto de relleno de las imprentas
+                y archivos de texto. Lorem Ipsum ha sido el texto de relleno
+                estándar de las industrias desde el año 1500, cuando un impresor
+                (N. del T. persona que se dedica a la imprenta) desconocido usó
+                una galería de textos y los mezcló de tal manera que logró hacer
+                un libro de textos especimen. No sólo sobrevivió 500 años.
+              </motion.p>
             </div>
-            <motion.div 
-            whileInView={{
-              x: [500, 0],
-              opacity: [0, 1],
-              transition: { duration: 1.5 },
-            }}
-            viewport={{once:true}}
-            className="font-hind lg:w-[50%] text-amber-50">
-              Lorem Ipsum es simplemente el texto de relleno de las imprentas y
-              archivos de texto. Lorem Ipsum ha sido el texto de relleno
-              estándar de las industrias desde el año 1500, cuando un impresor
-              (N. del T. persona que se dedica a la imprenta) desconocido usó
-              una galería de textos y los mezcló de tal manera que logró hacer
-              un libro de textos especimen. No sólo sobrevivió 500 años, sino
-              que tambien ingresó como texto de relleno en documentos
-              electrónicos, quedando esencialmente igual al original. Fue
-              popularizado en los 60s con la creación de las hojas "Letraset",
-              las cuales contenian pasajes de Lorem Ipsum, y más recientemente
-              con software de autoedición, como por ejemplo Aldus PageMaker, el
-              cual incluye versiones de Lorem Ipsum.
-            </motion.div>
+
           </div>
         </div>
       </section>
