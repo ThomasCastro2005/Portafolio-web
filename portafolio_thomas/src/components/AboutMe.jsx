@@ -56,9 +56,9 @@ const AboutMe = () => {
         pauseOnHover
       />
 
-      <section ref={targetRef} className="flex justify-center w-full h-[7%] py-40 overflow-hidden">
+      <section ref={targetRef} className="flex justify-center w-full h-[7%] pt-40 pb-20 overflow-hidden">
         <div className="w-[80%] flex">
-          <div className="flex flex-col lg:flex-row items-center gap-20">
+          <div className="flex flex-col lg:flex-row items-center gap-10 md:gap-20 lg:gap-20">
             <div className="lg:w-[50%] flex flex-col lg:flex-col justify-around gap-5">
               <motion.h1
               initial={{x:-150}}

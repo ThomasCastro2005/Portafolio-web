@@ -9,26 +9,23 @@ const Header = () => {
 
   return (
     <>
-      <header className="sticky top-0 z-50 w-full flex justify-between p-10 lg:grid md:grid-cols-3 lg:grid-cols-3 md:items-center md:place-items-center lg:items-center lg:place-items-center lg:py-4 lg:pt-10 font-bebas text-amber-50">
-        <span className="font-bebas font-semibold text-[20px]">THOMAS CASTRO</span>
+      <header className="sticky top-5 z-50 w-full flex justify-between p-10 lg:grid md:grid-cols-3 lg:grid-cols-3 md:items-center md:place-items-center lg:items-center lg:place-items-center lg:py-4 lg:pt-10 font-bebas text-amber-50">
+        <span className="font-bebas font-semibold text-[18px] tracking-wider select-none">THOMAS CASTRO</span>
 
-        {/* Nav pill — md/lg únicamente */}
-        <nav className="hidden md:flex sticky top-10 justify-center w-full md:w-[50%] lg:w-full items-center px-4 md:py-3 lg:py-3 border-b border-white/0 bg-white/10 backdrop-blur-md rounded-full">
+        <nav className="hidden md:flex sticky top-10 justify-center w-full md:w-[50%] lg:w-full items-center px-4 md:py-3 lg:py-3 border-b border-white/0 bg-white/9 backdrop-blur-md rounded-full">
           <ul className="flex justify-around w-100 gap-4">
             {navLinks.map((link) => (
-              <li key={link} className="cursor-pointer font-hind font-light">{link}</li>
+              <li key={link} className="cursor-pointer font-hind font-light text-[100%] hover:text-muted-foreground transition duration-200">{link}</li>
             ))}
           </ul>
         </nav>
 
-        {/* Language — md/lg únicamente */}
-        <select className="font-semibold hidden md:block">
+        <select className="font-semibold text-[95%] hidden md:block tracking-wider cursor-pointer hover:text-muted-foreground transition duration-200">
           <option>Language</option>
           <option>ES</option>
           <option>EN</option>
         </select>
 
-        {/* Hamburger — solo mobile */}
         <Motion.button
           className="md:hidden justify-self-end pr-4 text-amber-50"
           onClick={() => setOpen(true)}
@@ -38,7 +35,6 @@ const Header = () => {
         </Motion.button>
       </header>
 
-      {/* Menú fullscreen mobile */}
       <AnimatePresence>
         {open && (
           <Motion.div
@@ -48,7 +44,6 @@ const Header = () => {
             transition={{ duration: 0.25 }}
             className="md:hidden fixed inset-0 z-100 bg-black/95 backdrop-blur-xl flex flex-col items-center justify-center font-bebas text-amber-50"
           >
-            {/* Botón cerrar */}
             <Motion.button
               initial={{ opacity: 0, rotate: -90 }}
               animate={{ opacity: 1, rotate: 0 }}
@@ -59,7 +54,6 @@ const Header = () => {
               <X size={28} />
             </Motion.button>
 
-            {/* Links con stagger */}
             <ul className="flex flex-col items-center gap-6">
               {navLinks.map((link, i) => (
                 <Motion.li
@@ -75,7 +69,6 @@ const Header = () => {
               ))}
             </ul>
 
-            {/* Language */}
             <Motion.select
               initial={{ opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}

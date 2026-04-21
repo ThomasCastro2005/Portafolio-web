@@ -21,6 +21,8 @@ const buttonVariants = cva(
         link: "text-primary underline-offset-4 hover:underline",
         glass: "relative overflow-hidden bg-gradient-to-r from-purple-800 via-fuchsia-700 to-amber-800 text-white font-hind font-normal shadow-lg shadow-purple-500/30 hover:shadow-purple-500/60 hover:scale-105 transition-all duration-300 cursor-pointer",
         glass2: "relative overflow-hidden bg-gradient-to-r from-purple-800 via-fuchsia-700 to-amber-800 text-white font-hind font-normal shadow-lg shadow-purple-500/30 hover:shadow-purple-500/60 hover:scale-105 transition-all duration-300 cursor-pointer",
+        principalSection1:"bg-white text-zinc-900 rounded-full hover:bg-white/90 font-medium",
+        principalSection2:"bg-white/10 backdrop-blur-md border border-white/20 text-white rounded-full hover:bg-white/20"
       },
       size: {
         default: "h-12 px-10 py-2 has-[>svg]:px-3",
@@ -28,6 +30,7 @@ const buttonVariants = cva(
         sm: "h-8 gap-1.5 rounded-md px-3 has-[>svg]:px-2.5",
         lg: "h-12 rounded-md px-20 has-[>svg]:px-4",
         lg2: "h-12 rounded-md px-10 has-[>svg]:px-4",
+        lg3: "h-12 rounded-md px-7 has-[>svg]:px-4",
         icon: "size-9",
         "icon-xs": "size-6 rounded-md [&_svg:not([class*='size-'])]:size-3",
         "icon-sm": "size-8",

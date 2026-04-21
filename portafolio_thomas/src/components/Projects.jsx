@@ -47,7 +47,7 @@ const Projects = () => {
           whileInView={{ y: 0, opacity: 1 }}
           transition={{ duration: 1.2 }}
           viewport={{ once: true }}
-          className="font-bebas font-extrabold text-amber-50 text-center text-[40px] lg:text-5xl lg:text-start"
+          className="font-bebas font-extrabold text-amber-50 pt-20 text-center text-[40px] lg:text-5xl lg:text-start"
         >
           <span>Mis</span> <span className="text-purple-600">Proyectos</span>
         </motion.h1>

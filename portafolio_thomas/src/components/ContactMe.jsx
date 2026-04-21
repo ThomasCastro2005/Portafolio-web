@@ -5,8 +5,8 @@ import { Button } from "./ui/button";
 const ContactMe = () => {
   return (
     <>
-      <div className="flex justify-between items-center gap-10">
-        <div className="flex flex-col w-[70%]">
+      <div className="flex flex-col lg:flex-row lg:justify-between items-center gap-10">
+        <div className="flex justify-center flex-col w-[90%] lg:w-[70%]">
           <motion.span
             initial={{ x: 100, opacity: 0 }}
             whileInView={{ x: 0, opacity: 1 }}
