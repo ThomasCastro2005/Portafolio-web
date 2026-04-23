@@ -1,219 +1,108 @@
-import React from "react";
-import { AnimatePresence, motion } from "motion/react";
+import React, { useState } from "react";
+import { motion } from "motion/react";
+
+const items = [
+  {
+    level: "Bachiller",
+    title: "Bachiller",
+    institution: "Colegio Pedagógico Dulce María",
+    img: "https://tse4.mm.bing.net/th/id/OIP.9-FqgHuwmCxI6H5U92JQgQHaHa?w=512&h=512&rs=1&pid=ImgDetMain&o=7&rm=3",
+  },
+  {
+    level: "Técnico",
+    title: "Técnico en programación",
+    institution: "Sena",
+    img: "https://sena-sofia-plus.co/wp-content/uploads/2018/08/Presentaci%C3%B3n-Pruebas-SENA-IV-Convocatoria-2018-.png",
+  },
+  {
+    level: "Técnologo",
+    title: "Técnologo en análisis y desarrollo de software",
+    institution: "Sena",
+    img: "https://sena-sofia-plus.co/wp-content/uploads/2018/08/Presentaci%C3%B3n-Pruebas-SENA-IV-Convocatoria-2018-.png",
+  },
+  {
+    level: "Profesional",
+    title: "Ingeniería de Software",
+    institution: "Universidad Politécnico Grancolombiano",
+    img: "https://telefonosdecolombia.com/wp-content/uploads/Politecnico-Grancolombiano.png",
+  },
+];
 
 const TimeLineEducation = () => {
+  const [activeIndex, setActiveIndex] = useState(null);
+
+  const handleClick = (index) => {
+    setActiveIndex(activeIndex === index ? null : index);
+  };
+
+  <div className=" w-50 h-50 group cursor-pointer">
+
+    <div className="relative w-full h-full transition-transform duration-700 ">
+
+      <div className="absolute inset-0 [backface-visibility:hidden] bg-linear-to-l from-blue-600 via-pink-600 to-purple-600 flex items-center justify-center">
+        PRUEBA 1 ROTATE CARD
+      </div>
+
+      <div className="absolute inset-0 [backface-visibility:hidden] bg-linear-to-r from-purple-600 via-pink-600 to-blue-600 flex items-center justify-center">
+        hola desde atras
+      </div>
+    </div>
+  </div>;
+
   return (
-    <>
-      <section className="mx-auto pt-15 font-hind">
-        <div>
-          {/* Step 1 */}
-          <div className="flex lg:flex-row">
-            <div className="hidden md:flex flex-col items-center">
-              <div className="w-32 py-5 border border-gray-300 rounded mr-4 uppercase flex flex-col items-center justify-center">
-                <div className="text-3xl font-black text-amber-50">4</div>
-                <div className="text-amber-50 text-sm">Profesional</div>
-              </div>
-              <div className="h-full border-l-4 border-transparent">
-                <div className="border-l-4 mr-4 h-full border-gray-300 border-dashed"></div>
-              </div>
-            </div>
+    <section className="w-full py-16 pt-[10%] overflow-hidden font-hind">
+      <div className="flex flex-row md:flex-row lg:flex-row justify-between items-center">
+        {items.map((item, index) => {
+          const isActive = activeIndex === index;
+          return (
             <motion.div
-              initial={{ y: 50, opacity: 0 }}
-              whileInView={{ y: 0, opacity: 1 }}
-              transition={{ duration: 1.5 }}
+              key={index}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 1, delay: index * .40 }}
               viewport={{ once: true }}
-              className="flex-auto border rounded border-gray-300 md:h-56 lg:h-64 lg:items-center"
+              onClick={() => handleClick(index)}
+              className={`relative h-100 rounded-2xl overflow-hidden cursor-pointer group bg-zinc-900 transition-all duration-500
+                ${
+                  activeIndex === null
+                    ? "w-[22%]"
+                    : isActive
+                      ? "w-[40%]"
+                      : "w-[18%]"
+                }`}
             >
-              <div className="flex md:flex-row flex-col items-stretch h-full gap-10">
-                <div className="flex-auto flex flex-col md:flex-col lg:flex-col md:justify-center lg:justify-center">
-                  <div className="px-3 py-1 font-bebas text-xl md:text-[20px] lg:text-[20px] text-amber-50 font-bold">
-                    Ingenieria de Software
-                  </div>
-                  <div className="px-3 pb-1 text-sm md:text-base text-amber-50 font-normal">
-                    Universidad Politécnico Grancolombiano
-                  </div>
-                  <div className="px-3 pb-6 text-sm text-amber-50/50">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    Aperiam facilis, voluptates error alias dolorem praesentium
-                    sit soluta iure incidunt labore explicabo eaque, quia
-                    architecto veritatis dolores, enim consequatur nihil ipsum.
-                  </div>
-                </div>
-                <div className="w-full md:w-56 lg:w-90 shrink-0 h-48 md:h-full overflow-hidden">
-                  <img
-                    src="https://telefonosdecolombia.com/wp-content/uploads/Politecnico-Grancolombiano.png"
-                    alt="step 1"
-                    className="object-cover h-full w-full grayscale hover:grayscale-0 transition duration-300"
-                  />
-                </div>
+              <div className="lg:block absolute inset-0 bg-linear-to-t from-black/95 via-black/40 to-black/20 z-10" />
+
+              <div className="absolute top-4 left-4 z-20 flex md:flex-col lg:flex-col leading-none">
+                <span className="[writing-mode:vertical-rl] rotate-180 font-bebas text-5xl leading-[1.2] bg-linear-to-t from-white to-white/10 bg-clip-text text-transparent">
+                  {item.level}
+                </span>
+              </div>
+
+              <div className="relative top-85 right-20 z-0">
+                <div className="w-92 h-92 rounded-full object-cover object-center ring bg-purple-600/50 ring-purple-900 blur scale-150 shadow-purple-900 group-hover:scale-295 transition-transform duration-500" />
+              </div>
+
+              <div
+                className={`absolute bottom-4 z-20 px-4 text-center left-0 right-0 transition-all duration-700
+                  lg:opacity-0 lg:translate-y-4 lg:group-hover:opacity-100 lg:group-hover:translate-y-0
+                  ${isActive ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"}
+                `}
+              >
+                <p className="text-amber-50 text-[18px] font-semibold leading-tight">
+                  {item.title}
+                </p>
+                <p className="text-muted-foreground text-[16px] mt-0.5 leading-tight">
+                  {item.institution}
+                </p>
               </div>
             </motion.div>
-          </div>
+          );
+        })}
+      </div>
 
-          {/* Connector 1 to 2 */}
-          <div className="flex items-start flex-row">
-            <div className="border-t-4 border-r-4 border-transparent">
-              <div className="w-10 ml-8 md:w-16 md:ml-16 h-16 border-l-4 border-gray-300 border-dashed border-b-4 rounded-bl-full"></div>
-            </div>
-            <div className="border-t-4 border-transparent flex-auto">
-              <div className="h-16 border-b-4 border-gray-300 border-dashed"></div>
-            </div>
-            <div className="w-10 mt-16 mr-8 md:w-16 md:mt-16 md:mr-16 h-16 border-r-4 border-gray-300 border-dashed border-t-4 rounded-tr-full"></div>
-          </div>
-
-          {/* Step 2 */}
-          <div className="flex flex-row-reverse">
-            <div className="hidden md:flex flex-col items-center">
-              <div className="w-32 py-5 border border-gray-300 rounded ml-4 uppercase flex flex-col items-center justify-center">
-                <div className="text-3xl font-black text-amber-50">3</div>
-                <div className="text-amber-50 text-sm">Técnologo</div>
-              </div>
-              <div className="h-full border-r-4 border-transparent">
-                <div className="border-l-4 ml-4 h-full border-gray-300 border-dashed"></div>
-              </div>
-            </div>
-            <motion.div
-              initial={{ y: 50, opacity: 0 }}
-              whileInView={{ y: 0, opacity: 1 }}
-              transition={{ duration: 1.5 }}
-              viewport={{ once: true }}
-              className="flex-auto border rounded border-gray-300 md:h-56 lg:h-64"
-            >
-              <div className="flex md:flex-row flex-col items-stretch h-full gap-10">
-                <div className="flex-auto flex flex-col md:flex-col lg:flex-col md:justify-center lg:justify-center">
-                  <div className="p-3 font-bebas text-xl md:text-[20px] lg:text-[20px] text-amber-50 font-bold">
-                    Técnologo en análisis y desarrollo de software
-                  </div>
-                  <div className="px-3 py-1 text-sm md:text-base text-amber-50 font-normal">
-                    Sena
-                  </div>
-                  <div className="px-3 pb-1 text-sm text-amber-50/50">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    Aperiam facilis, voluptates error alias dolorem praesentium
-                    sit soluta iure incidunt labore explicabo eaque, quia
-                    architecto veritatis dolores, enim consequatur nihil ipsum.
-                  </div>
-                </div>
-                <div className="w-full md:w-56 lg:w-90 shrink-0 h-48 md:h-full overflow-hidden">
-                  <img
-                    src="https://sena-sofia-plus.co/wp-content/uploads/2018/08/Presentaci%C3%B3n-Pruebas-SENA-IV-Convocatoria-2018-.png"
-                    alt="step 2"
-                    className="object-cover h-full w-full grayscale-75 hover:grayscale-0 transition duration-300"
-                  />
-                </div>
-              </div>
-            </motion.div>
-          </div>
-
-          {/* Connector 2 to 3 */}
-          <div className="flex items-start flex-row-reverse">
-            <div className="border-t-4 border-l-4 border-transparent">
-              <div className="w-10 mr-8 md:w-16 md:mr-16 h-16 border-r-4 border-gray-300 border-dashed border-b-4 rounded-br-full"></div>
-            </div>
-            <div className="border-t-4 border-transparent flex-auto">
-              <div className="h-16 border-b-4 border-gray-300 border-dashed"></div>
-            </div>
-            <div className="w-10 mt-16 ml-8 md:w-16 md:mt-16 md:ml-16 h-16 border-l-4 border-gray-300 border-dashed border-t-4 rounded-tl-full"></div>
-          </div>
-
-          {/* Step 3 */}
-          <div className="flex flex-row">
-            <div className="hidden md:flex flex-col items-center">
-              <div className="w-32 py-5 border border-gray-300 rounded mr-4 uppercase flex flex-col items-center justify-center">
-                <div className="text-3xl font-black text-amber-50">2</div>
-                <div className="text-amber-50 text-sm">Técnico</div>
-              </div>
-              <div className="h-full border-l-4 border-transparent">
-                <div className="border-l-4 mr-4 h-full border-gray-300 border-dashed"></div>
-              </div>
-            </div>
-            <motion.div
-              initial={{ y: 50, opacity: 0 }}
-              whileInView={{ y: 0, opacity: 1 }}
-              transition={{ duration: 1.5 }}
-              viewport={{ once: true }}
-              className="flex-auto border rounded border-gray-300 md:h-56 lg:h-64"
-            >
-              <div className="flex md:flex-row flex-col items-stretch h-full gap-10">
-                <div className="flex-auto flex flex-col md:flex-col lg:flex-col md:justify-center lg:justify-center">
-                  <div className="p-3 font-bebas text-xl md:text-[20px] lg:text-[20px] text-amber-50 font-bold">
-                    Técnico en programación
-                  </div>
-                  <div className="px-3 py-1 text-sm md:text-base text-amber-50 font-normal">
-                    Sena
-                  </div>
-                  <div className="px-3 pb-1 text-sm text-amber-50/50">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    Aperiam facilis, voluptates error alias dolorem praesentium
-                    sit soluta iure incidunt labore explicabo eaque, quia
-                    architecto veritatis dolores, enim consequatur nihil ipsum.
-                  </div>
-                </div>
-                <div className="w-full md:w-56 lg:w-90 shrink-0 h-48 md:h-full overflow-hidden">
-                  <img
-                    src="https://sena-sofia-plus.co/wp-content/uploads/2018/08/Presentaci%C3%B3n-Pruebas-SENA-IV-Convocatoria-2018-.png"
-                    alt="step 3"
-                    className="object-cover h-full w-full grayscale-75 hover:grayscale-0 transition duration-300"
-                  />
-                </div>
-              </div>
-            </motion.div>
-          </div>
-
-          {/* Connector 3 to 4 */}
-          <div className="flex items-start flex-row">
-            <div className="border-t-4 border-r-4 border-transparent">
-              <div className="w-10 ml-8 md:w-16 md:ml-16 h-16 border-l-4 border-gray-300 border-dashed border-b-4 rounded-bl-full"></div>
-            </div>
-            <div className="border-t-4 border-transparent flex-auto">
-              <div className="h-16 border-b-4 border-gray-300 border-dashed"></div>
-            </div>
-            <div className="w-10 mt-16 mr-8 md:w-16 md:mt-16 md:mr-16 h-16 border-r-4 border-gray-300 border-dashed border-t-4 rounded-tr-full"></div>
-          </div>
-
-          {/* Step 4 */}
-          <div className="flex flex-row-reverse">
-            <div className="hidden md:flex flex-col items-center">
-              <div className="w-32 py-5 border border-gray-300 rounded ml-4 uppercase flex flex-col items-center justify-center">
-                <div className="text-3xl font-black text-amber-50">1</div>
-                <div className="text-amber-50 text-sm">Bachiller</div>
-              </div>
-            </div>
-            <motion.div
-              initial={{ y:50, opacity:0 }}
-              whileInView={{ y:0, opacity: 1 }}
-              transition={{ duration:1.5 }}
-              viewport={{ once: true }}
-              className="flex-auto border rounded border-gray-300 md:h-56 lg:h-64"
-            >
-              <div className="flex md:flex-row flex-col items-stretch h-full md:gap-10 gap-10">
-                <div className="flex-auto flex flex-col md:flex-col lg:flex-col md:justify-center lg:justify-center">
-                  <div className="p-3 font-bebas text-xl md:text-[20px] lg:text-[20px] text-amber-50 font-bold">
-                    Bachiller
-                  </div>
-                  <div className="px-3 py-1 text-sm md:text-base text-amber-50 font-normal">
-                    Colegio Pedagógico Dulce María
-                  </div>
-                  <div className="px-3 pb-1 text-sm text-amber-50/50">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    Aperiam facilis, voluptates error alias dolorem praesentium
-                    sit soluta iure incidunt labore explicabo eaque, quia
-                    architecto veritatis dolores, enim consequatur nihil ipsum.
-                  </div>
-                </div>
-                <div className="w-full md:w-56 lg:w-90 shrink-0 h-48 md:h-full overflow-hidden">
-                  <img
-                    src="https://tse4.mm.bing.net/th/id/OIP.9-FqgHuwmCxI6H5U92JQgQHaHa?w=512&h=512&rs=1&pid=ImgDetMain&o=7&rm=3"
-                    alt="step 4"
-                    className="object-cover h-full w-full grayscale-75 hover:grayscale-0 transition duration-300"
-                  />
-                </div>
-              </div>
-            </motion.div>
-          </div>
-        </div>
-      </section>
-    </>
+      
+    </section>
   );
 };
 

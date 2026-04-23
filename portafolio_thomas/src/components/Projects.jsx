@@ -9,7 +9,7 @@ import { motion } from "motion/react";
 const projects = [
   {
     img: imgProject1,
-    title: "Project One",
+    title: "FitCenter 360 (App de Gym)",
     tags: ["React", "Tailwind"],
     link: "#",
     description:
@@ -17,7 +17,7 @@ const projects = [
   },
   {
     img: imgProject2,
-    title: "Project Two",
+    title: "Magia Frutal (Gestión de Frutería/Heladería)",
     tags: ["Next.js", "TypeScript"],
     link: "#",
     description:
@@ -25,7 +25,14 @@ const projects = [
   },
   {
     img: imgProject3,
-    title: "Project Three",
+    title: "Sistema de Cotizacion de Techos",
+    tags: ["Vue", "CSS"],
+    link: "#",
+    description:
+      "Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de texto. Lorem Ipsum ha sido el texto de relleno estándar de las industrias desde el año 1500, cuando un impresor (N. del T. persona que se dedica a la imprenta) desconocido usó una galería de textos y los mezcló de tal manera que logró hacer un libro de textosa",
+  },{
+    img: imgProject3,
+    title: "Pipeline Meta Lead Ads → Zoho CRM",
     tags: ["Vue", "CSS"],
     link: "#",
     description:

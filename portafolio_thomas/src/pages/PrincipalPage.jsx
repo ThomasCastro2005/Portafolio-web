@@ -24,7 +24,7 @@ const PrincipalPage = () => {
         <div className="flex flex-col">
           <AboutMe />
         </div>
-        <div className="flex justify-center w-full lg:h-400">
+        <div className="flex justify-center w-full lg:h-160">
           <div className="w-[80%]">
             <motion.h2
               initial={{ y: -50, opacity: 0 }}

@@ -56,11 +56,10 @@ const AboutMe = () => {
 
       <section
         ref={targetRef}
-        className="p-10 flex justify-center w-full h-[7%] pb-20 pt-60 lg:pt-60 lg:pb-30 overflow-hidden"
+        className="p-10 flex justify-center w-full h-[7%] pb-20 pt-60 lg:pt-80 lg:pb-40 overflow-hidden"
       >
         <div className="w-[80%] flex">
           <div className="w-full flex flex-col lg:flex-row items-center gap-10 md:gap-20 lg:gap-20">
-
             <div className=" flex flex-col lg:flex-col justify-around items-center gap-5">
               <div className="flex justify-center lg:flex-row w-[70%] lg:w-[90%]">
                 <img
@@ -70,10 +69,10 @@ const AboutMe = () => {
               </div>
             </div>
 
-            <div className="flex gap-10 flex-col lg:flex-col items-center w-full">
+            <div className="flex gap-10 lg:gap-4 flex-col lg:flex-col items-center w-full">
               <motion.h1
-                initial={{ y: -50, opacity:0 }}
-                whileInView={{ y: 0, opacity:1 }}
+                initial={{ y: -50, opacity: 0 }}
+                whileInView={{ y: 0, opacity: 1 }}
                 transition={{
                   duration: 1.3,
                   type: "tween",
@@ -88,25 +87,32 @@ const AboutMe = () => {
                 </span>
               </motion.h1>
               <motion.p
-                initial={{ y: 50, opacity:0 }}
-                whileInView={{ y: 0, opacity:1 }}
+                initial={{ y: 50, opacity: 0 }}
+                whileInView={{ y: 0, opacity: 1 }}
                 transition={{
                   duration: 1.3,
                   type: "tween",
                   ease: "easeInOut",
                 }}
                 viewport={{ once: true }}
-                className="h-full flex justify-center items-center font-hind lg:w-[80%] text-amber-50"
+                className="h-full font-hind lg:w-[80%] text-amber-50"
               >
-                Lorem Ipsum es simplemente el texto de relleno de las imprentas
-                y archivos de texto. Lorem Ipsum ha sido el texto de relleno
-                estándar de las industrias desde el año 1500, cuando un impresor
-                (N. del T. persona que se dedica a la imprenta) desconocido usó
-                una galería de textos y los mezcló de tal manera que logró hacer
-                un libro de textos especimen. No sólo sobrevivió 500 años.
+                Desarrollador Full Stack{" "}
+                <span className="text-muted-foreground">
+                  enfocado en resolver problemas reales mediante código.
+                  Especializado en el stack
+                </span>{" "}
+                Java <span className="text-muted-foreground">y</span> React{" "}
+                <span className="text-muted-foreground">
+                  {" "}
+                  busco optimizar cada línea para crear
+                </span>
+                <span className="text-muted-foreground">
+                  , experiencias digitales{" "}
+                </span>
+                fluidas, rápidas y eficientes.
               </motion.p>
             </div>
-
           </div>
         </div>
       </section>

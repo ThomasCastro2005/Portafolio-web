@@ -18,7 +18,7 @@ const CardProjects = ({
   const x = useTransform(scrollYProgress, [0, 1], ["-40%", "0%"]);
   return (
     <>
-        <div className="flex flex-col justify-center items-center gap-10 lg:flex-row lg:gap-30">
+        <div className="flex flex-col justify-center items-center gap-10 lg:flex-row lg:gap-30 cursor-pointer">
           <motion.div
           whileInView={{
             y:[50,0],
